@@ -221,8 +221,22 @@ function getOlderCars(arr, maxYear) {
  * made by either `Audi` or `Mercedes-Benz` or `Volkswagen` or `BMW`,
  * in the same order as they appear in the original inventory.
 */
-function getGermanCars(/* code here */) {
-  /* code here */
+function getGermanCars(arr) {
+  const germanCars = [];
+  
+  for (let i = 0; i < arr.length; i++){
+    switch(arr[i].car_make) {
+      case 'Audi':
+      case 'Mercedes-Benz':
+      case 'Volkswagen':
+      case 'BMW':
+        germanCars.push(arr[i]);
+        break;
+      default:
+        break;
+    }
+  }
+  return germanCars;
 }
 
 /**
@@ -243,9 +257,15 @@ function getGermanCars(/* code here */) {
  *   return num * 2
  * }
 */
-const sum = null; // code here!
-const addFive = null; // code here!
-const argTimesTwo = null; // code here!
+const sum = ((a, b) => {
+  return a + b
+});
+const addFive = (num => {
+  return num +5
+});
+const argTimesTwo = (num => {
+  return num * 2
+});
 
 /**
  * ### Challenge `carMaker`
