@@ -61,13 +61,13 @@ makePersonObject(5, 'John', 'john@hotmail.com')
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(name, id, email) {
+function getName(object) {
   var obj = {
     name: name,
     id: id,
     email: email
   }
-  return `Hello, my name is Luke`;
+  return 'Hello my name is ' + object.name;
 }
 
 getName('Luke')
@@ -85,9 +85,10 @@ getName('Luke')
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
-function makeSmartPerson(/* code here */) {
-  /* code here */
+function makeSmartPerson() {
+  
 }
+
 
 /**
  * ### Challenge `getCarInfoByIndex`
