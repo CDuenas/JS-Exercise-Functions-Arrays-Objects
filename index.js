@@ -62,16 +62,7 @@ makePersonObject(5, 'John', 'john@hotmail.com')
  * the returned value should look like `Hello, my name is Leia`.
 */
 function getName(object) {
-<<<<<<< HEAD
-  var obj = {
-    name: name,
-    id: id,
-    email: email
-  }
-  return 'Hello my name is ' + object.name;
-=======
   return 'Hello, my name is ' + object.name ;
->>>>>>> a7afd591ebd7a8fe538d51890ea0624ed7ec1470
 }
 
 getName('Luke')
@@ -89,12 +80,6 @@ getName('Luke')
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
-<<<<<<< HEAD
-function makeSmartPerson() {
-  
-}
-
-=======
 function makeSmartPerson(name) {
   const obj = {
     name: name,
@@ -111,7 +96,6 @@ function makeSmartPerson(name) {
 var smartPerson = makeSmartPerson('Luke')
 
 smartPerson.speak()
->>>>>>> a7afd591ebd7a8fe538d51890ea0624ed7ec1470
 
 /**
  * ### Challenge `getCarInfoByIndex`
@@ -172,8 +156,16 @@ function getCarInfoById(array, id) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * sortCarInventory returns an inventory that is sorted by car_model, ascending [A-Z].
 */
-function sortCarInventory(/* code here */) {
-  /* code here */
+function sortCarInventory(array) {
+  return array.sort(function(a, b){
+    if (a.car_model < b.car_model) {
+      return -1;
+    } 
+    if (a.car_model > b.car_model){
+      return 1;
+    }
+
+    return 0;
 }
 
 /**
