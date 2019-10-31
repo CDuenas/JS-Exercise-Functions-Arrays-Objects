@@ -61,13 +61,8 @@ makePersonObject(5, 'John', 'john@hotmail.com')
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(name, id, email) {
-  var obj = {
-    name: name,
-    id: id,
-    email: email
-  }
-  return `Hello, my name is Luke`;
+function getName(object) {
+  return 'Hello, my name is ' + object.name ;
 }
 
 getName('Luke')
@@ -85,9 +80,22 @@ getName('Luke')
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
-function makeSmartPerson(/* code here */) {
-  /* code here */
+function makeSmartPerson(name) {
+  const obj = {
+    name: name,
+    sum: function(a, b){
+      return a + b;
+    },
+    speak: function() {
+      return `Hello, my name is ${this.name}` ;
+    }
+  };
+  return obj;
 }
+
+var smartPerson = makeSmartPerson('Luke')
+
+smartPerson.speak()
 
 /**
  * ### Challenge `getCarInfoByIndex`
@@ -101,8 +109,8 @@ function makeSmartPerson(/* code here */) {
  * For example, if getCarInfoByIndex is invoked with the inventory and the number 0,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoByIndex(/* code here */) {
-  /* code here */
+function getCarInfoByIndex(array, i) {
+  return 'This is a ' + array[i].car_make + '' + array[i].car_model;
 }
 
 /**
@@ -116,8 +124,8 @@ function getCarInfoByIndex(/* code here */) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(/* code here */) {
-  /* code here */
+function getLastCarInfo(array) {
+  return 'This is a ' + array[array.length-1].car_make + '' + array[array.length-1].car_model;
 }
 
 /**
@@ -132,8 +140,9 @@ function getLastCarInfo(/* code here */) {
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoById(/* code here */) {
-  /* code here */
+function getCarInfoById(array, number) {
+  number = array.id;
+  return 'This is a ' + array.car_make + '' + array.car_model;
 }
 
 /**
