@@ -83,19 +83,15 @@ getName('Luke')
 function makeSmartPerson(name) {
   const obj = {
     name: name,
-    sum: function(a, b){
+    sum: ((a, b) => {
       return a + b;
-    },
-    speak: function() {
+    }),
+    speak: (() => {
       return `Hello, my name is ${this.name}` ;
-    }
+    })
   };
   return obj;
 }
-
-var smartPerson = makeSmartPerson('Luke')
-
-smartPerson.speak()
 
 /**
  * ### Challenge `getCarInfoByIndex`
@@ -257,9 +253,7 @@ function getGermanCars(arr) {
  *   return num * 2
  * }
 */
-const sum = ((a, b) => {
-  return a + b
-});
+const sum = ((a, b) => a + b);
 const addFive = (num => {
   return num +5
 });
